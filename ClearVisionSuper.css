@@ -1,0 +1,176 @@
+/**
+ * @name ClearVision V7 for BetterDiscord
+ * @author ClearVision Team
+ * @version 7.0.1
+ * @description Highly customizable theme for BetterDiscord.
+ * @source https://github.com/ClearVision/ClearVision-v7
+ * @website https://clearvision.github.io
+ * @invite dHaSxn3
+ */
+/* IMPORT CSS */
+@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+@import url("https://clearvision.github.io/ClearVision-v7/betterdiscord.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800');
+/* SETTINGS */
+:root {
+  /* ACCENT COLORS */
+  --main-color: #ffffff; /* main accent color (hex, rgb or hsl) [default: #2780e6] */
+  --hover-color: #c6c6c6; /* hover accent color (hex, rgb or hsl) [default: #1e63b3] */
+  --success-color: #43b581; /* positive accent color (hex, rgb or hsl) [default: #43b581] */
+  --danger-color: #982929; /* danger accent color (hex, rgb or hsl) [default: #982929] */
+  /* STATUS COLORS */
+  --online-color: #00ff8c; /* online status color (hex, rgb or hsl) [default: #43b581] */
+  --idle-color: #eec98a; /* idle status color (hex, rgb or hsl) [default: #faa61a] */
+  --dnd-color: #f88989; /* dnd status color (hex, rgb or hsl) [default: #982929] */
+  --streaming-color: #593695; /* streaming status color (hex, rgb or hsl) [default: #593695] */
+  --offline-color: #808080; /* offline/invisible status color (hex, rgb or hsl) [default: #808080] */
+  /* APP BACKGROUND */
+  --background-shading-percent: 50%; /* app background shading amount (0 for complete smoothness) [default: 100%] */
+  --background-image: url(https://i.imgur.com/FATKdUF.png); /* app background image (link must be HTTPS) [default: url(https://clearvision.github.io/images/sapphire.jpg)]*/
+  --background-position: center; /* app background position [default: center] */
+  --background-size: cover; /* app background size (px) [default: cover] */
+  --background-attachment: fixed; /* app background attachment [default: fixed] */
+  --background-filter: saturate(calc(var(--saturation-factor, 1) * 1)) brightness(125%) blur(50%); /* app background adjustments (ex: blur, saturation, brightness) (more info: https://developer.mozilla.org/en-US/docs/Web/CSS/filter) [default: saturate(calc(var(--saturation-factor, 1) * 1))] */
+  /* USER POPOUT BACKGROUND */
+  --user-popout-image: var(--background-image); /* user popout background image (link must be HTTPS) (not applied to nitro users) [default: var(--background-image)] */
+  --user-popout-position: var(--background-position); /* user popout position [default: var(--background-position)] */
+  --user-popout-size: var(--background-size); /* user popout size (px) [default: var(--background-size)] */
+  --user-popout-attachment: var(--background-attachment); /* user popout background attachment [default: var(--background-attachment)] */
+  --user-popout-filter: var(--background-filter); /* user popout background adjustments (ex: blur, saturation, brightness) (more info: https://developer.mozilla.org/en-US/docs/Web/CSS/filter) [default: var(--background-filter);] */
+  /* USER MODAL BACKGROUND */
+  --user-modal-image: var(--background-image); /* user modal background image (link must be HTTPS) (not applied to nitro users) [default: var(--background-image)] */
+  --user-modal-position: var(--background-position); /* user modal position [default: var(--background-position)] */
+  --user-modal-size: var(--background-size); /* user modal size (px) [default: var(--background-size)] */
+  --user-modal-attachment: var(--background-attachment); /* user modal background attachment [default: var(--background-attachment)] */
+  --user-modal-filter: var(--background-filter); /* user modal background adjustments (ex: blur, saturation, brightness) (more info: https://developer.mozilla.org/en-US/docs/Web/CSS/filter) [default: var(--background-filter);] */
+  /* HOME ICON */
+  --home-icon: url(https://clearvision.github.io/icons/discord.svg); /* home button icon (link must be HTTPS) [default: url(https://clearvision.github.io/icons/discord.svg)]*/
+  --home-size: cover; /* home button icon size (px) [default:cover] */
+  /* FONTS */
+  --main-font: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; /* main font for app (font must be installed) [default: gg sans, Helvetica Neue, Helvetica, Arial, sans-serif] */
+  --code-font: Consolas, "gg mono", "Liberation Mono", Menlo, Courier, monospace; /* font for codeblocks (font must be installed) [default: Consolas, Liberation Mono, Menlo, Courier, monospace] */
+  /* CHANNEL COLORS */
+  --channel-normal: var(--interactive-text-default); /* channel text color [default: var(--interactive-text-default)] */
+  --channel-muted: var(--interactive-muted); /* muted channel text color [default: var(--interactive-muted)] */
+  --channel-hover: var(--interactive-text-hover); /* hovered channel text color [default: var(--interactive-text-hover)] */
+  --channel-selected: #f2f2f2; /* selected channel text color [default: var(--interactive-text-active)] */
+  --channel-selected-bg: #272727; /* selected channel background [default: var(--main-color)] */
+  --channel-unread: var(--main-color); /* unread channel text color [default: var(--main-color)] */
+  --channel-unread-hover: var(--hover-color); /* unread channel hover color [default: var(--hover-color)] */
+  /* ACCESSIBILITY */
+  --focus-color: var(--main-color); /* outline when pressing TAB key [default: var(--main-color)] */
+}
+
+/* THEME SPECIFIC SHADING */
+/* LIGHT THEME */
+:is(.theme-light, .theme-dark .theme-light) {
+  --background-shading: rgba(252, 252, 252, 0.3); /* app background shading color [default: rgba(252, 252, 252, 0.3)] */
+  --card-shading: rgba(252, 252, 252, 0.3); /* cards background shading color [default: rgba(252, 252, 252, 0.3)] */
+  --popout-shading: rgba(252, 252, 252, 0.7); /* popouts background shading color [default: rgba(252, 252, 252, 0.7)] */
+  --modal-shading: rgba(252, 252, 252, 0.5); /* modals background shading color [default: rgba(0, 0, 0, 0.6)] */
+  --input-shading: rgba(0, 0, 0, 0.3); /* inputs background shading color [default: rgba(0, 0, 0, 0.6)] */
+  --normal-text: #36363c; /* text color [default: #36363c] */
+  --muted-text: #75757e; /* muted text color [default: #75757e] */
+}
+
+/* ASH THEME */
+:is(.theme-dark, .theme-light .theme-dark) {
+  --background-shading: rgba(0, 0, 0, 0.4); /* app background shading color [default: rgba(0, 0, 0, 0.4)] */
+  --card-shading: rgba(0, 0, 0, 0.2); /* cards background shading color [default: rgba(0, 0, 0, 0.2)] */
+  --popout-shading: rgba(0, 0, 0, 0.6); /* popouts background shading color [default: rgba(0, 0, 0, 0.6)] */
+  --modal-shading: rgba(0, 0, 0, 0.4); /* modals background shading color [default: rgba(0, 0, 0, 0.4)] */
+  --input-shading: rgba(255, 255, 255, 0.05); /* inputs background shading color [default: rgba(255, 255, 255, 0.05)] */
+  --normal-text: #d8d8db; /* text color [default: #d8d8db] */
+  --muted-text: #aeaeb4; /* muted text color [default: #aeaeb4] */
+}
+
+/* DARK THEME */
+:is(.theme-darker, .theme-light .theme-darker) {
+  --background-shading: rgba(0, 0, 0, 0.6); /* app background shading color [default: rgba(0, 0, 0, 0.6)] */
+  --card-shading: rgba(0, 0, 0, 0.3); /* cards background shading color [default: rgba(0, 0, 0, 0.3)] */
+  --popout-shading: rgba(0, 0, 0, 0.7); /* popouts background shading color [default: rgba(0, 0, 0, 0.7)] */
+  --modal-shading: rgba(0, 0, 0, 0.5); /* modals background shading color [default: rgba(0, 0, 0, 0.6)] */
+  --input-shading: rgba(255, 255, 255, 0.05); /* inputs background shading color [default: rgba(255, 255, 255, 0.05)] */
+  --normal-text: #fbfbfb; /* text color [default: #fbfbfb] */
+  --muted-text: #94949c; /* muted text color [default: #94949c] */
+}
+
+/* ONYX THEME */
+:is(.theme-midnight, .theme-light .theme-midnight) {
+  --background-shading: rgba(0, 0, 0, 0.8); /* app background shading color [default: rgba(0, 0, 0, 0.8)] */
+  --card-shading: rgba(0, 0, 0, 0.4); /* cards background shading color [default: rgba(0, 0, 0, 0.4)] */
+  --popout-shading: rgba(0, 0, 0, 0.8); /* popouts background shading color [default: rgba(0, 0, 0, 0.8)] */
+  --modal-shading: rgba(0, 0, 0, 0.6); /* modals background shading color [default: rgba(0, 0, 0, 0.6)] */
+  --input-shading: rgba(255, 255, 255, 0.05); /* inputs background shading color [default: rgba(255, 255, 255, 0.05)] */
+  --normal-text: #dcdcde; /* text color [default: #dcdcde] */
+  --muted-text: #86868e; /* muted text color [default: #86868e] */
+}
+
+/* ADD ADDITIONAL CSS BELOW HERE */
+
+.interactive__972a0.interactiveSelected__972a0 {
+  --interactive-text-active: #141414;
+  --icon-strong: var(--interactive-text-active);
+}
+
+.interactiveSelected__972a0 .chipletContainerInner__10651 {
+  --text-default: #141414;
+  --text-strong: var(--text-default);
+  background-color: #e5e5e5;
+  color: var(--text-default);
+}
+
+.interactiveSelected__972a0 .tagText__10651 {
+  color: var(--text-default);
+}
+
+.interactiveSelected__972a0 .badge__10651 {
+  filter: grayscale(1) brightness(0.55);
+}
+
+:is(.topPill_aa8da2, .side_aa8da2) .themed_aa8da2.item_aa8da2.selected_aa8da2,
+.tabBar__133bf .addFriend__133bf.addFriend__133bf.addFriend__133bf[aria-selected="true"],
+.item_caf372.active_caf372,
+.navItem__551b0.selected__551b0 {
+  --text-strong: #141414;
+  --text-default: var(--text-strong);
+  --text-subtle: var(--text-strong);
+  --interactive-text-active: var(--text-strong);
+  --interactive-icon-active: var(--text-strong);
+  --icon-default: var(--text-strong);
+  --icon-strong: var(--text-strong);
+  color: var(--text-strong);
+}
+
+.wrapper__2ea32.modeSelected__2ea32 .link__2ea32::before {
+  box-shadow: inset 2px 0 var(--main-color);
+}
+
+/* White and light-gray fills need dark foregrounds. */
+.numberBadge__463b7,
+.textBadge__463b7,
+.iconBadge__03991,
+.iconBadge__03991 svg,
+.barText__7aaec,
+.unreadIcon__7aaec,
+.text__3b95d,
+.icon__3b95d,
+.icon_edf32f {
+  color: #141414 !important;
+}
+
+.wrapper_f61d60,
+.wrapper_f61d60:hover,
+.lookFilled__201d5:is(.colorBrand__201d5, .colorPrimary__201d5, .colorWhite__201d5, .colorBrandInverted__201d5),
+.primary_a22cb0:not(.custom-user-profile-theme *),
+.circleIconButton__5bc7e:hover:not(.disabled__5bc7e),
+.circleIconButton__5bc7e.selected__5bc7e,
+.wrapper__6e9f8:is(:hover, .selected__6e9f8) .childWrapper__6e9f8 {
+  color: #141414;
+}
+
+/* ClearVision paints the Home logo as a white SVG background. */
+.wrapper__6e9f8:is(:hover, .selected__6e9f8) .childWrapper__6e9f8 > svg {
+  filter: brightness(0);
+}
